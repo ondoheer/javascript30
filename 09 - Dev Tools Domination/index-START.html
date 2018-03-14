@@ -18,28 +18,66 @@
     }
 
     // Regular
+    console.log("Hello");
 
     // Interpolated
+    console.log("Hello I am a %s !", "palabra");
 
     // Styled
+    console.log("%c I am a larger console text", 'font-size: 45px');
 
     // warning!
+    console.warn("This is a warning");
 
     // Error :|
+    console.error("This is an error");
 
     // Info
+    console.info("This is a fun fact");
 
     // Testing
+    console.assert(1 === 1, 'That is wrong');
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p);
 
     // Grouping together
 
+    console.clear();
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`); // console.groupCollapsed()
+        console.log("el perro dijo barf");
+        console.log("El otro dijo miau");
+        console.log("Esto debería ter otros ejemplos pero tengo fiebre y me quiero ir");
+      console.groupEnd(`${dog.name}`);
+    });
+
     // counting
+    console.count("Pedro");
+    console.count("Baumann");
+    console.count("Pedro");
+    console.count("Pedro");
+    console.count("Pedro");
+    console.count("Baumann");
+    console.count("Pedro");
+    console.count("Pedro");
+    console.count("Baumann");
+    console.count("Pedro");
+    console.count("Pedro");
+
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/ondoheer')
+      .then(data=> data.json())
+      .then(data => {console.table(data)
+          console.timeEnd('fetching data');
+      });
 
   </script>
 </body>
